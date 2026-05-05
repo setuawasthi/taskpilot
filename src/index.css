@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Primary / Brand - Indigo */
+  --color-mo-primary: #4F5D75;
+  --color-mo-primary-hover: #3D4A5E;
+  --color-mo-primary-selected: #6B7A92;
+  --color-mo-primary-highlighted: #343E55;
+  --color-mo-primary-surface: #F4F5F7;
+
+  --color-mo-brand: #6366F1;
+  --color-mo-brand-hover: #4F46E5;
+  --color-mo-brand-selected: #818CF8;
+  --color-mo-brand-surface: #EEF2FF;
+
+  --color-mo-bg-primary: #FFFFFF;
+  --color-mo-bg-secondary: #0F1117;
+  --color-mo-bg-ui: #F8F9FB;
+  --color-mo-bg-grey: #ECEEF1;
+  --color-mo-bg-hover: #E8EAED;
+  --color-mo-bg-inverted: #000000;
+
+  --color-mo-text-primary: #1A1D23;
+  --color-mo-text-secondary: #5E6878;
+  --color-mo-text-muted: #919BA8;
+  --color-mo-text-placeholder: #B8BFC7;
+  --color-mo-text-link: #6366F1;
+  --color-mo-text-inverted: #FFFFFF;
+
+  --color-mo-border-primary: #5E6878;
+  --color-mo-border-secondary: #919BA8;
+  --color-mo-border-accent: #6366F1;
+  --color-mo-border-layout: #E8EAED;
+  --color-mo-border-input: #DDE0E4;
+  --color-mo-border-input-focus: #6366F1;
+
+  --color-mo-disabled-primary: #B8BFC7;
+  --color-mo-disabled-secondary: #ECEEF1;
+  --color-mo-disabled-text: #919BA8;
+  --color-mo-disabled-border: #DDE0E4;
+
+  --color-mo-error-primary: #E64646;
+  --color-mo-error-hover: #CF3636;
+  --color-mo-error-surface: #FEF1F1;
+  --color-mo-error-text: #A32B2B;
+  --color-mo-error-border: #F5A5A5;
+
+  --color-mo-warning-primary: #E5A117;
+  --color-mo-warning-surface: #FDF6E6;
+  --color-mo-warning-text: #8A5E0A;
+  --color-mo-warning-border: #F0D078;
+
+  --color-mo-success-primary: #2F9E58;
+  --color-mo-success-surface: #EFFAF3;
+  --color-mo-success-text: #1B7A3A;
+  --color-mo-success-border: #84D8A2;
+
+  --color-mo-info-primary: #6366F1;
+  --color-mo-info-surface: #EEF2FF;
+  --color-mo-info-text: #4338CA;
+  --color-mo-info-border: #A5B4FC;
+
+  --color-sidebar-bg: #0F1117;
+  --color-sidebar-hover: rgba(255,255,255,0.06);
+  --color-sidebar-active: rgba(99,102,241,0.15);
+  --color-sidebar-text: #8B92A8;
+  --color-sidebar-text-active: #FFFFFF;
+  --color-sidebar-border: rgba(255,255,255,0.08);
+  --color-sidebar-brand: #6366F1;
+
+  --color-primary-50: #eef2ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-600: #6366F1;
+}
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: #F8F9FB;
+  --foreground: #1A1D23;
+  --card: #FFFFFF;
+  --card-foreground: #1A1D23;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1D23;
+  --primary: #6366F1;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F4F5F7;
+  --secondary-foreground: #4F5D75;
+  --muted: #F4F5F7;
+  --muted-foreground: #919BA8;
+  --accent: #EEF2FF;
+  --accent-foreground: #4F46E5;
+  --destructive: #E64646;
+  --border: #E8EAED;
+  --input: #DDE0E4;
+  --ring: #6366F1;
+  --chart-1: #6366F1;
+  --chart-2: #818CF8;
+  --chart-3: #2F9E58;
+  --chart-4: #E5A117;
+  --chart-5: #E64646;
+  --radius: 0.5rem;
+  --sidebar: #0F1117;
+  --sidebar-foreground: #8B92A8;
+  --sidebar-primary: #6366F1;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: rgba(99,102,241,0.15);
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: rgba(255,255,255,0.08);
+  --sidebar-ring: #6366F1;
+}
+
+.dark {
+  --background: #0C0E12;
+  --foreground: #F4F5F7;
+  --card: #14161C;
+  --card-foreground: #F4F5F7;
+  --popover: #14161C;
+  --popover-foreground: #F4F5F7;
+  --primary: #818CF8;
+  --primary-foreground: #FFFFFF;
+  --secondary: #1E2028;
+  --secondary-foreground: #C5CAD2;
+  --muted: #1E2028;
+  --muted-foreground: #6B7483;
+  --accent: #1E1B4B;
+  --accent-foreground: #EEF2FF;
+  --destructive: #E64646;
+  --border: #252830;
+  --input: #252830;
+  --ring: #6366F1;
+  --chart-1: #818CF8;
+  --chart-2: #6366F1;
+  --chart-3: #2F9E58;
+  --chart-4: #E5A117;
+  --chart-5: #E64646;
+  --sidebar: #0C0E12;
+  --sidebar-foreground: #6B7483;
+  --sidebar-primary: #818CF8;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #1E2028;
+  --sidebar-accent-foreground: #818CF8;
+  --sidebar-border: #252830;
+  --sidebar-ring: #6366F1;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+#root {
+  min-height: 100svh;
+  width: 100%;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #DDE0E4;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B8BFC7;
+}
+
+/* Subtle animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
